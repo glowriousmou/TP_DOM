@@ -1,0 +1,98 @@
+html, body {
+    height: 100%;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  .container {
+    flex: 1;
+  }
+.completed {
+    text-decoration: line-through;
+    color: green;
+  }
+
+  .fade {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+  }
+
+  .fade-out {
+    opacity: 0;
+  }
+  footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  .flip-container {
+    perspective: 1000px;
+  }
+
+  .flip-card {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+  }
+
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .flip-card-front {
+    background-color: #0d21a1;
+    ;
+    color: white;
+  }
+
+  .flip-card-back {
+    background-color: #c71f00;
+    color: white;
+    transform: rotateY(180deg);
+  }
+
+  .flipped .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  /* Animation pour faire disparaître l'image */
+@keyframes imgFadeOut {
+  0% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+}
+/* Animation pour faire apparaître la nouvelle image */
+@keyframes imgFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
