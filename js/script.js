@@ -162,7 +162,7 @@ function demoList (backDiv){
   const itemList = document.createElement("ul");
   itemList.id = "itemList";
   itemList.classList.add("list-group", "mb-3");
-  itemList.style.position = "absolute";
+  itemList.style.position = "absolute"; // absolute = depend de sont parent direct --- relative =
   itemList.style.top = "70px"; 
 
   // Créer le bouton supprimer
@@ -201,9 +201,7 @@ function demoList (backDiv){
       deleteButton.style.display = "none";
     }
   }
-
-  // Ajout d'un élément à la liste
-  addButton.addEventListener("click", function() {
+  function handleEventAddItem() {
     const value = inputValue.value.trim();
     if (value) {
       items.push(value);
@@ -216,14 +214,17 @@ function demoList (backDiv){
         updateUI();
       }
     }
-  });
-
-  // Suppression de tous les éléments
-  deleteButton.addEventListener("click", function() {
+  }
+  // Ajout d'un élément à la liste
+  addButton.addEventListener("click", handleEventAddItem);
+  
+  function handleEventClearItem () {
     items = [];
     itemList.innerHTML = "";
     updateUI();
-  });
+  }
+  // Suppression de tous les éléments
+  deleteButton.addEventListener("click",handleEventClearItem);
 
   // Mise à jour initiale de l'interface
   updateUI();
