@@ -66,15 +66,13 @@ function demoImg(backDiv) {
   const imgCat = document.createElement("img");
   imgCat.setAttribute("src", "./assets/cat.png");
   imgCat.setAttribute("alt", "monImage1");
-  imgCat.setAttribute("width", "150");
-  imgCat.setAttribute("height", "150");
+ 
 
   // Configure la deuxième image
   const imgGoat = document.createElement("img");
   imgGoat.setAttribute("src", "./assets/goat.png");
   imgGoat.setAttribute("alt", "monImage2");
-  imgGoat.setAttribute("width", "150");
-  imgGoat.setAttribute("height", "150");
+ 
 
   // Applique les styles de positionnement et d'animation initiale
   imgCat.style.position = "absolute";
@@ -82,12 +80,17 @@ function demoImg(backDiv) {
   imgCat.style.opacity = "1";
   imgCat.style.transform = "translateX(0%)";  // Image 1 visible à sa place
   imgCat.style.top = "70px";  // Marge supérieure
+  imgCat.style.width = "150px";  
+  imgCat.style.height = "150px";  
+
 
   imgGoat.style.position = "absolute";
   imgGoat.style.transition = "transform 0.5s ease-in-out, opacity 0.5s ease-in-out";
   imgGoat.style.opacity = "0";  // Image 2 invisible au début
   imgGoat.style.transform = "translateX(100%)";  // Image 2 hors de l'écran
   imgGoat.style.top = "70px";  // Marge supérieure
+  imgGoat.style.width = "150px";  
+  imgGoat.style.height = "150px";  
 
   // Ajoute les deux images au conteneur
   backDiv.appendChild(imgCat);
